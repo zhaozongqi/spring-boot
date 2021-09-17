@@ -2,6 +2,7 @@ package com.zzq.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import io.swagger.models.Contact;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -22,6 +23,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableKnife4j
 @Import(BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfig {
+  @Value("${server.port}")
+  private String port;
   @Bean
   public Docket customDocket() {
     return new Docket(DocumentationType.SWAGGER_2)
@@ -35,7 +38,7 @@ public class SwaggerConfig {
     return new ApiInfoBuilder()
         .title("zhaozongqi")//文档说明
         .version("1.0.0")//文档版本说明
-        .license("文档").licenseUrl("http://localhost:9099/doc.html")
+        .license("文档").licenseUrl("http://localhost:"+port+"/doc.html")
         .build();
   }
 }

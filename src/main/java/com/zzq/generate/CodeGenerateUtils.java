@@ -70,7 +70,7 @@ public class CodeGenerateUtils {
 
     // 数据源配置
     DataSourceConfig dsc = new DataSourceConfig();
-    dsc.setUrl("jdbc:mysql://localhost:3306/myself?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC");
+    dsc.setUrl("jdbc:mysql://localhost:3306/myself?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true");
     dsc.setDriverName("com.mysql.cj.jdbc.Driver");
     dsc.setUsername("root");
     dsc.setPassword("root");
