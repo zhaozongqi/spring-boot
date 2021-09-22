@@ -14,7 +14,7 @@ mybatis-plus:
       logic-not-delete-value: 1
       logic-delete-value: 0
 server:
-  port: 9099
+  port: 9098
   tomcat:
     uri-encoding: UTF-8
 spring:
@@ -27,7 +27,10 @@ swagger:
   enable: true
 
 knife4j:
-  production: false
+  basic:
+    enable: true
+    username: admin
+    password: admin
 
 #指定日志配置文件
 logging:

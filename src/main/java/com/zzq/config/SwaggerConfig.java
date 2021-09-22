@@ -3,6 +3,7 @@ package com.zzq.config;
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import io.swagger.models.Contact;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -30,7 +31,7 @@ public class SwaggerConfig {
     return new Docket(DocumentationType.SWAGGER_2)
         .apiInfo(apiInfo())
         .select()
-        .apis(RequestHandlerSelectors.basePackage("com.zzq.controller"))//扫描的包路径
+        .apis(RequestHandlerSelectors.basePackage("com.zzq"))//扫描的包路径
         .build();
   }
 
