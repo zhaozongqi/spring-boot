@@ -9,7 +9,6 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -21,28 +20,25 @@ import com.zzq.common.pagination.Paging;
   * </p>
  *
  * @author zzq
- * @since 2021-09-22
+ * @since 2021-09-27
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
-    @Autowired
-    private UserMapper userMapper;
     @Override
-    public IPage<User> findListByPage(User user, long size, long currentPage){
+    public Paging<User> findListByPage(User user, long size, long currentPage){
       Page<User> page = new Page<>();
-      page.setCurrent(currentPage);
       page.setSize(size);
-
-      List<OrderItem> orders = new ArrayList<>();
+      page.setCurrent(currentPage);
+      List<OrderItem> orderItemList = new ArrayList<>();
       OrderItem orderItem = new OrderItem();
       orderItem.setAsc(true);
       orderItem.setColumn("id");
-      orders.add(orderItem);
-      page.setOrders(orders);
+      orderItemList.add(orderItem);
+      page.setOrders(orderItemList);
       LambdaQueryWrapper<User> wrapper = new QueryWrapper<User>().lambda();
-      IPage<User> iPage = userMapper.selectPage(page,wrapper);
-      return iPage;
+      IPage<User> iPage = baseMapper.selectPage(page,wrapper);
+      return new Paging<>(iPage);
 
     }
 }

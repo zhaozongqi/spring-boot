@@ -36,6 +36,7 @@ public class SwaggerConfig {
   }
 
   private ApiInfo apiInfo() {
+    System.out.println("http://localhost:"+port+"/doc.html");
     return new ApiInfoBuilder()
         .title("zhaozongqi")//文档说明
         .version("1.0.0")//文档版本说明

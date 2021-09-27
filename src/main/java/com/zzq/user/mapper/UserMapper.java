@@ -2,7 +2,6 @@ package com.zzq.user.mapper;
 
 import com.zzq.user.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -10,9 +9,8 @@ import org.springframework.stereotype.Repository;
  * </p>
  *
  * @author zzq
- * @since 2021-09-22
+ * @since 2021-09-27
  */
-@Repository
 public interface UserMapper extends BaseMapper<User> {
 
 }

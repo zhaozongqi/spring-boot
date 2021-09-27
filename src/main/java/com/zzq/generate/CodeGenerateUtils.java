@@ -116,7 +116,6 @@ public class CodeGenerateUtils {
             + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
       }
     });
-
     cfg.setFileOutConfigList(focList);
     mpg.setCfg(cfg);
 
