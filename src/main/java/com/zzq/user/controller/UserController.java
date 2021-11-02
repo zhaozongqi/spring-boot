@@ -2,6 +2,7 @@ package com.zzq.user.controller;
 
 import com.zzq.common.api.ApiResult;
 import com.zzq.common.api.ApiCode;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.zzq.user.service.UserService;
 import com.zzq.user.entity.User;
@@ -27,10 +28,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     private Logger log = LoggerFactory.getLogger(getClass());
-    @Resource
+
+    @Autowired
     private UserService userService;
 
-    @ApiOperation(value = "查询分页数据sdf")
+    @ApiOperation(value = "查询分页数据")
     @PostMapping("userPage")
     public ApiResult findListByPage(@RequestBody User user, Integer size, Integer currentPage){
         try {
