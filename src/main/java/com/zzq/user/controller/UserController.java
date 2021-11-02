@@ -11,13 +11,10 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Resource;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * <p>
-  *  前端控制器
-  * </p>
+ * <p> 前端控制器 </p>
  *
  * @author zzq
  * @since 2021-09-27
@@ -27,19 +24,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
 
-    private Logger log = LoggerFactory.getLogger(getClass());
+  private Logger log = LoggerFactory.getLogger(getClass());
 
-    @Autowired
-    private UserService userService;
+  @Autowired
+  private UserService userService;
 
-    @ApiOperation(value = "查询分页数据")
-    @PostMapping("userPage")
-    public ApiResult findListByPage(@RequestBody User user, Integer size, Integer currentPage){
-        try {
-            return ApiResult.ok(userService.findListByPage(user,size,currentPage));
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            return ApiResult.fail(ApiCode.FAIL);
-        }
+  /**
+   * 分页查询
+   *
+   * @param user
+   * @param size
+   * @param currentPage
+   * @return
+   */
+  @ApiOperation(value = "查询分页数据")
+  @PostMapping("userPage")
+  public ApiResult findListByPage(@RequestBody User user, Integer size, Integer currentPage) {
+    try {
+      return ApiResult.ok(userService.findListByPage(user, size, currentPage));
+    } catch (Exception e) {
+      log.error(e.getMessage(), e);
+      return ApiResult.fail(ApiCode.FAIL);
     }
+  }
 }
