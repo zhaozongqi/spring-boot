@@ -15,7 +15,6 @@ public class MybatisPlusConfig {
    * 分页插件
    * @return
    */
-  // 最新版
   @Bean
   public MybatisPlusInterceptor mybatisPlusInterceptor() {
     MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();

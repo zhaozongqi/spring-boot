@@ -2,8 +2,6 @@ package com.zzq.user.controller;
 
 import com.zzq.common.api.ApiResult;
 import com.zzq.common.api.ApiCode;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import org.springframework.web.bind.annotation.*;
 import com.zzq.user.service.UserService;
 import com.zzq.user.entity.User;
