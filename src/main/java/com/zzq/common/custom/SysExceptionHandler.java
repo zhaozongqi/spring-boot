@@ -1,6 +1,5 @@
 package com.zzq.common.custom;
 
-import com.zzq.common.api.ApiCode;
 import com.zzq.common.api.ApiResult;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  */
 @RestControllerAdvice
 public class SysExceptionHandler {
-    
+
     /**
      * 自定义异常
      *
