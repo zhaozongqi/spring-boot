@@ -3,6 +3,7 @@ package com.zzq.user.service;
 import com.zzq.user.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zzq.common.pagination.Paging;
+import com.zzq.user.vo.UserVo;
 
 /**
  * <p>
@@ -18,7 +19,7 @@ public interface UserService extends IService<User> {
      * 查询分页数据
      * @param user
      */
-    Paging<User> findListByPage(User user ,long size, long currentPage);
+    Paging<UserVo> findListByPage(User user , long size, long currentPage);
 
 
 }

@@ -30,7 +30,8 @@ public enum ApiCode {
      * 操作成功
      **/
     SUCCESS(200, "操作成功"),
-    FAIL(500, "操作失败");
+    FAIL(201, "操作失败"),
+    PARAM_ERROR(202, "参数缺失");
 
     private final int code;
     private final String message;
